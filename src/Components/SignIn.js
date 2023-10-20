@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+
 
 const SignIn = ({ setAuth }) => {  
 
@@ -18,7 +18,7 @@ const SignIn = ({ setAuth }) => {
     try {
       const body = { email, password };
       const response = await fetch(
-        "http://localhost:8000/authentication/login",
+        "/api/authentication/login",
         {
           method: "POST",
           headers: {

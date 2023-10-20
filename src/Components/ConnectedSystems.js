@@ -32,7 +32,7 @@ useEffect(() => {
       'Content-Type': 'application/json', 
     },
   };
-  axios.get('http://localhost:8000/systems/connectedsystems', config)
+  axios.get('/api/systems/connectedsystems', config)
      .then((response) => {
        setcardData(response.data);
        
@@ -63,7 +63,7 @@ const GoToInstance = (systemId) => {
       {cardData.map((system) => (
         <ListItem key={system.id} style={{ flex: "0 0 calc(33.33% - 20px)", margin: "5px", padding: "0" }}>
           <ListItemAvatar style={{ textAlign: "center" }}>
-            <Avatar alt={system.name} src={`http://localhost:8000/uploads/${system.image}`} sx={avatarStyle} onClick={() => GoToInstance(system.id)}>
+            <Avatar alt={system.name} src={`/api/uploads/${system.image}`} sx={avatarStyle} onClick={() => GoToInstance(system.id)}>
               <ImageIcon />
             </Avatar>
             <ListItemText primary={system.name} style={{ marginTop: "8px" }} />

@@ -35,7 +35,7 @@ const Profile = ({ setAuth }) => {
                 },
               };
           
-              const response = await axios.get('http://localhost:8000/user/profile', config);
+              const response = await axios.get('/api/user/profile', config);
               const userData = response.data;
               console.log(userData);
               setUserId (userData.user_id);
@@ -62,7 +62,7 @@ const Profile = ({ setAuth }) => {
             },
           };
        
-        const response = await axios.put(`http://localhost:8000/user/${user_id}`, {
+        const response = await axios.put(`/api/user/${user_id}`, {
          
         user_name: name,
         user_email: email,
@@ -97,7 +97,7 @@ const Profile = ({ setAuth }) => {
           };
           
           const response = await axios.post(
-            'http://localhost:8000/user/password-reset',
+            '/api/user/password-reset',
             requestBody , config
           );
     

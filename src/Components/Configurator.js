@@ -35,7 +35,7 @@ useEffect(() => {
       'Content-Type': 'application/json', 
     },
   };
-  axios.get('http://localhost:8000/template/templates', config)
+  axios.get('/api/template/templates', config)
      .then((response) => {
        setcardData(response.data);
        
@@ -69,7 +69,7 @@ useEffect(() => {
           <div style={{ margin: '8px' }}>
             
             <img
-              src={`http://localhost:8000/uploads/${card.image1}`} 
+              src={`/api/uploads/${card.image1}`} 
               alt={card.title}
               style={{ width: '50px', height: '50px', borderRadius: '50%' }}
             />
@@ -88,7 +88,7 @@ useEffect(() => {
             </div>
           <div style={{ margin: '8px' }}>
             <img
-              src={`http://localhost:8000/uploads/${card.image2}`} 
+              src={`/api/uploads/${card.image2}`} 
               alt={card.title}
               style={{ width: '50px', height: '50px', borderRadius: '50%' }}
             />

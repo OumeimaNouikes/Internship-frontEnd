@@ -34,7 +34,7 @@ export default function Integration() {
       },
     };
     axios
-      .get(`http://localhost:8000/instance/system1-instances/${connected_system_id_1}`,config)
+      .get(`/api/instance/system1-instances/${connected_system_id_1}`,config)
       .then((response) => {
         setSystem1Instances(response.data);
       })
@@ -43,7 +43,7 @@ export default function Integration() {
       });
 
     axios
-      .get(`http://localhost:8000/instance/system2-instances/${connected_system_id_2}`,config)
+      .get(`/api/instance/system2-instances/${connected_system_id_2}`,config)
       .then((response) => {
         setSystem2Instances(response.data);
       })
@@ -84,7 +84,7 @@ export default function Integration() {
 
     
     axios
-      .post('http://localhost:8000/integration/create', integrationData,config)
+      .post('/api/integration/create', integrationData,config)
       .then((response) => {
         toast.success('Integration created successfully!');
        

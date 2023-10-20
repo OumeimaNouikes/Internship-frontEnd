@@ -31,7 +31,7 @@ const Dashboard = ({ }) => {
       },
     };
     axios
-      .get('http://localhost:8000/integration/count',config)
+      .get('/api/integration/count',config)
       .then((response) => {
         setIntegrationCount(response.data.count);
       })
@@ -49,7 +49,7 @@ const Dashboard = ({ }) => {
       },
     };
     axios
-      .get('http://localhost:8000/instance/count',config)
+      .get('/api/instance/count',config)
       .then((response) => {
         setinstanceount(response.data.count);
       })

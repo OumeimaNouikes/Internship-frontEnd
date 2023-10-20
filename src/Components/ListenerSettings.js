@@ -25,7 +25,7 @@ export default function ListenerSettings() {
             },
           };
       
-          const response = await axios.get('http://localhost:8000/settings/web', config);
+          const response = await axios.get('/api/settings/web', config);
           const webData = response.data;
          
           setAcessPort (port);

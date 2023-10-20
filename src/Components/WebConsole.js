@@ -31,7 +31,7 @@ export default function WebConsole() {
             },
           };
       
-          const response = await axios.get('http://localhost:8000/settings/web', config);
+          const response = await axios.get('/api/settings/web', config);
           const webData = response.data;
          
           setAcessPort (port);
@@ -62,7 +62,7 @@ export default function WebConsole() {
           },
         };
        
-        const response = await axios.put(`http://localhost:8000/settings/update`, {
+        const response = await axios.put(`/api/settings/update`, {
           https_enabled:httpsEnabled,
           certificate_path,
           certificate_key_password,

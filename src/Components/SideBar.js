@@ -23,7 +23,7 @@ import LanIcon from '@mui/icons-material/Lan';
 import LockIcon from '@mui/icons-material/Lock';
 import TroubleshootIcon from '@mui/icons-material/Troubleshoot';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
-
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -100,17 +100,16 @@ const SideBar = ({ setAuth }) => {
  
   const getName = async () => {
     try {
-      const res = await fetch("http://localhost:8000/dashboard/", {
-        method: "GET",
+      const response = await axios.get("/api/dashboard", {
         headers: { Authorization: localStorage.token }
       });
-
-      const parseData = await res.json();
+  
+      const parseData = response.data;
       setName(parseData.user_name);
     } catch (err) {
       console.error(err.message);
     }
-  };
+  }
   useEffect(() => {
     getName();
   }, []);

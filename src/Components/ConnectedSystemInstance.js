@@ -37,7 +37,7 @@ export default function ConnectedSystemInstance() {
           'Content-Type': 'application/json',
         },
       };
-      const response = await axios.get(`http://localhost:8000/instance/check-url-validity?url=${formData.url}`, config);
+      const response = await axios.get(`/api/instance/check-url-validity?url=${formData.url}`, config);
 
       if (response.data.isValid) {
         setUrlValidity(true);
@@ -85,7 +85,7 @@ export default function ConnectedSystemInstance() {
         },
       };
 
-      const response = await axios.post(`http://localhost:8000/instance/create`, {
+      const response = await axios.post(`/api/instance/create`, {
         systemId,
         url: urlToTest,
         name: formData.name,

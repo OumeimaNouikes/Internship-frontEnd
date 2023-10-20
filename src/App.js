@@ -38,7 +38,9 @@ function App() {
               element={!isAuthenticated ? <SignIn setAuth={setAuth} /> : <Navigate to="/dashboard" />}
               
             />
-             <Route path="/" element={<SignIn/>} /> 
+       <Route path="/"
+       element={!isAuthenticated ? <SignIn setAuth={setAuth} /> : <Navigate to="/dashboard" />}
+       /> 
        <Route
                exact
                path="/dashboard"
